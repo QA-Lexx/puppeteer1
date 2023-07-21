@@ -21,14 +21,14 @@ describe("Github page tests", () => {
     expect(title2).toEqual('GitHub for teams · Build like the best teams on the planet · GitHub');
     await page.setDefaultTimeout(10000);
     await page.setDefaultNavigationTimeout(20000);
-  });
+  }, 10000);
 
   test("The first link attribute", async () => {
     const actual = await page.$eval("a", link => link.getAttribute('href') );
     expect(actual).toEqual("#start-of-content");
     await page.setDefaultTimeout(10000);
     await page.setDefaultNavigationTimeout(20000);
-  });
+  }, 10000);
 
   test("The page contains Sign in button", async () => {
     const btnSelector = ".btn-large-mktg.btn-mktg";
@@ -39,7 +39,7 @@ describe("Github page tests", () => {
     expect(actual).toContain("Get started with Team");
     await page.setDefaultTimeout(10000);
     await page.setDefaultNavigationTimeout(20000);
-  });
+  }, 10000);
 });
 
 test("One new test the h3 header content'", async () => {
@@ -52,7 +52,7 @@ test("One new test the h3 header content'", async () => {
   expect(titleActions).toEqual('Features • GitHub Actions · GitHub');
   await pageActions.setDefaultTimeout(10000);
   await pageActions.setDefaultNavigationTimeout(20000);
-});
+}, 10000);
 
 test("Second new test the h4 header content'", async () => {
   pagePackages = await browser.newPage();
@@ -64,7 +64,7 @@ test("Second new test the h4 header content'", async () => {
   expect(titlePackages).toEqual('GitHub Packages: Your packages, at home with their code · GitHub');
   await pagePackages.setDefaultTimeout(10000);
   await pagePackages.setDefaultNavigationTimeout(20000);
-});
+}, 10000);
 
 test("Third new test the h1 header content'", async () => {
   pageSecurity = await browser.newPage();
@@ -76,4 +76,4 @@ test("Third new test the h1 header content'", async () => {
   expect(titleSecurity).toEqual('Features · Security · GitHub');
   await pageSecurity.setDefaultTimeout(10000);
   await pageSecurity.setDefaultNavigationTimeout(20000);
-});
+}, 10000);
