@@ -6,7 +6,7 @@ let pageSecurity;
 beforeEach(async () => {
   page = await browser.newPage();
   await page.goto("https://github.com/team");
-});
+}, 60000);
 
 afterEach(() => {
   page.close();
